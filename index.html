@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menina Moça</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-pink-500 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold text-white">Menina Moça</h1>
+                <nav class="space-x-6">
+                    <a href="#" class="text-white hover:text-pink-200 font-medium">Home</a>
+                    <a href="#" class="text-white hover:text-pink-200 font-medium">Produtos</a>
+                    <a href="#" class="text-white hover:text-pink-200 font-medium">Contato</a>
+                </nav>
+                <div class="relative">
+                    <input type="search" placeholder="Buscar produtos..." class="px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-300 w-64">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Categories Section -->
+        <div class="object-cover mx-auto px-4 mt-8">
+            <div class="flex justify-center space-x-6 flex-wrap">
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-00 transition-colors active" data-category="todos">Todos</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="rosto">Rosto</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="olhos">Olhos</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="labios">Lábios</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="lancamentos">Lançamentos</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="menorpreco">Menor Preço</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="MaiorPreço">Maior Preço</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="maisvendido">Mais Vendidos</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="Novidades">Novidades</button>
+                <button class="category-btn py-2 px-4 font-medium hover:text-pink-500 transition-colors" data-category="Promoções">Promoções</button>
+            </div>
+        </div>
+
+        <!-- Slider Section -->
+        <div class="relative w-full h-[45vh] border-4 border-pink-300">
+            <div class="slider w-full h-full relative overflow-hidden bg-pink-100">
+                <div class="h-full">
+                    <img src="imagens/img 1.PNG" class="slide absolute w-full h-full object-cover" alt="Menina Moça 1">
+                    <img src="imagens/img 2.PNG" class="slide absolute w-full h-full object-cover" alt="Menina Moça 2">
+                    <img src="imagens/mak.jpg" class="slide absolute w-full h-full object-cover" alt="Menina Moça 3">
+                </div>
+
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/50 p-2 rounded-full hover:bg-white/75 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/50 p-2 rounded-full hover:bg-white/75 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2" id="dots"></div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-wrap items-center gap-4">
+                <button class="bg-pink-500 text-white px-6 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                    Filtrar
+                </button>
+                <div class="flex flex-wrap gap-3">
+                    <select class="px-4 py-2 rounded-full border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-300">
+                        <option value="" disabled selected>Classificar por</option>
+                        <option value="menor-preco">Menor Preço</option>
+                        <option value="maior-preco">Maior Preço</option>
+                        <option value="mais-vendidos">Mais Vendidos</option>
+                        <option value="novidades">Novidades</option>
+                        <option value="promocoes">Promoções</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="container mx-auto px-4 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="imagens/Base Matte.jpg" alt="Base Matte" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">ROSTO</span>
+                        <h3 class="text-lg font-semibold mt-1">Base Matte</h3>
+                        <p class="text-gray-600 text-sm mt-1">Cobertura de longa duração</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 89,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="imagens/Paleta de Sombras.jpg" alt="Paleta de Sombras" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">OLHOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Paleta de Sombras</h3>
+                        <p class="text-gray-600 text-sm mt-1">12 cores matte e cintilantes</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 129,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="imagens/Batom Líquido Matte.jpg" alt="Batom Líquido" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">LABIOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Batom Líquido Matte</h3>
+                        <p class="text-gray-600 text-sm mt-1">Longa duração 24h</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 45,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="imagens/Iluminador Facial.jpg" alt="Iluminador" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">LANCAMENTOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Iluminador Facial</h3>
+                        <p class="text-gray-600 text-sm mt-1">Brilho natural e radiante</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 79,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="imagens/" alt="Máscara de Cílios" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">OLHOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Máscara de Cílios</h3>
+                        <p class="text-gray-600 text-sm mt-1">Volume e alongamento</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 69,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="primer.jpg" alt="Primer Facial" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">ROSTO</span>
+                        <h3 class="text-lg font-semibold mt-1">Primer Facial</h3>
+                        <p class="text-gray-600 text-sm mt-1">Controle da oleosidade</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 59,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="gloss.jpg" alt="Gloss Labial" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">LABIOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Gloss Labial</h3>
+                        <p class="text-gray-600 text-sm mt-1">Brilho intenso</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 39,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="delineador.jpg" alt="Delineador" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <span class="text-xs text-pink-500 font-semibold">LANCAMENTOS</span>
+                        <h3 class="text-lg font-semibold mt-1">Delineador Líquido</h3>
+                        <p class="text-gray-600 text-sm mt-1">Ultra preciso</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold">R$ 49,90</span>
+                            <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
